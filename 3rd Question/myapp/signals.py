@@ -1,11 +1,10 @@
-from django.db.models.signals import post_save
+# myapp/signals.py
+from django.db.models.signals import pre_save
 from django.dispatch import receiver
-from django.db import transaction
-from .models import ModelA, ModelB
+from .models import ModelA
+import threading
 
-@receiver(post_save, sender=ModelA)
+@receiver(pre_save, sender=ModelA)
 def my_signal_handler(sender, instance, **kwargs):
-    with transaction.atomic():  # Use atomic block to ensure transaction
-        print("Signal handler started.")
-        ModelB.objects.create(related_model=instance)
-        print("Signal handler completed.")
+    print(f"Signal received. Inside the transaction.")
+    print(f"Signal is inside the transaction.")
