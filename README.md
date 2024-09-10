@@ -1,5 +1,5 @@
-Question 1: 
-By default are django signals executed synchronously or asynchronously? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.
+**Question 1: 
+By default are django signals executed synchronously or asynchronously? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.**
 
 By default, Django signals are executed synchronously. This means that when a signal is sent, the connected receiver functions are executed immediately within the same thread, blocking the main execution until they are done.
 
@@ -47,11 +47,11 @@ Total time taken: 5.02 seconds
 ```
 Conclusion:
 As seen in the example, the total time taken includes the 5-second delay introduced by the signal handler. This demonstrates that Django signals are executed synchronously by default because the main execution waits for the signal handler to finish before continuing.
+<br>
 
 
-
-Question 2:
-Do django signals run in the same thread as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.
+**Question 2:
+Do django signals run in the same thread as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.**
 
 Yes, by default, Django signals run in the same thread as the caller. To prove this, we can examine the thread IDs of both the main caller and the signal handler when a signal is triggered. If the thread IDs are the same, this conclusively shows that the signal handler is running in the same thread as the main execution.
 
@@ -86,12 +86,13 @@ Signal received in thread: 140370487887360
 ```
 Conclusion:
 In this example, the thread ID printed in the main execution and the thread ID printed inside the signal handler are the same. This proves that Django signals, by default, run in the same thread as the caller.
+<br>
 
 
 
 
-Question 3: 
-By default do django signals run in the same database transaction as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.
+**Question 3: 
+By default do django signals run in the same database transaction as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.**
 
 By default, Django signals do not automatically run in the same database transaction as the caller unless explicitly wrapped in a transaction. This means that Django signals can run outside of the transactional context unless they are explicitly managed with transaction handling mechanisms.
 
@@ -153,14 +154,14 @@ Instance was NOT saved due to rollback.
 ```
 Conclusion:
 The signal handler runs inside the transaction as long as it is executed within a transaction.atomic() block, as shown by the message "Signal is inside the transaction." If the transaction is rolled back, the signal and the changes it triggers are also rolled back. This proves that Django signals can run inside the same transaction as the caller if the transaction is managed explicitly using transaction.atomic(). However, by default, they are not automatically wrapped in a transaction unless specifically handled.
+<br>
 
 
-
-Topic: Custom Classes in Python
-Description: You are tasked with creating a Rectangle class with the following requirements:
+**Topic: Custom Classes in Python**<br>
+**Description: You are tasked with creating a Rectangle class with the following requirements:
 An instance of the Rectangle class requires length:int and width:int to be initialized.
 We can iterate over an instance of the Rectangle class 
-When an instance of the Rectangle class is iterated over, we first get its length in the format: {'length': <VALUE_OF_LENGTH>} followed by the width {width: <VALUE_OF_WIDTH>}
+When an instance of the Rectangle class is iterated over, we first get its length in the format: {'length': <VALUE_OF_LENGTH>} followed by the width {width: <VALUE_OF_WIDTH>}**
 
 To create the Rectangle class that meets the requirements, we will:
 Define the Rectangle class with the __init__ method to initialize length and width.
