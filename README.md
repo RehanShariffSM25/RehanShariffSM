@@ -1,4 +1,4 @@
-## I have explained the logic with a basic code snippet in this README file. For detailed code for each question, please refer to the seperate files of each question.
+## I have explained the basic logic for each of the four questions using a code snippet in this README file, while the complete code for each of the four questions is available in separate files corresponding to each question.
 
 To run the scripts, execute the following Python files for each question:
 
