@@ -2,10 +2,10 @@
 
 To run the scripts, execute the following Python files for each question:
 
-Question 1: test_signals_synchronous.py
-Question 2: test_signals.py
-Question 3: test_transactions.py
-Question 4: rectangle.py
+Question 1: test_signals_synchronous.py<br>
+Question 2: test_signals.py<br>
+Question 3: test_transactions.py<br>
+Question 4: rectangle.py<br>
 
 **Django Signals**
 
