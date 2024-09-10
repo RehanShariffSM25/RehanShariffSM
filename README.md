@@ -21,7 +21,7 @@ We'll use Django's built-in pre_save signal, which is triggered just before an i
 We'll connect a signal receiver function that introduces an artificial delay using Python's time.sleep() to simulate a long-running task.
 By observing how long the main code takes to execute, we can verify that the signal is running synchronously.
 
-Code Example:
+Code Snippet:
 ```python
 import time
 from django.db import models
@@ -68,7 +68,7 @@ Do django signals run in the same thread as the caller? Please support your answ
 
 Yes, by default, Django signals run in the same thread as the caller. To prove this, we can examine the thread IDs of both the main caller and the signal handler when a signal is triggered. If the thread IDs are the same, this conclusively shows that the signal handler is running in the same thread as the main execution.
 
-Code Example:
+Code Snippet:
 ```python
 import threading
 from django.db import models
@@ -113,9 +113,9 @@ By default, Django signals do not automatically run in the same database transac
 
 To conclusively prove whether Django signals run in the same transaction as the caller, we'll use Django's transaction module to create a transaction and test whether the signal behaves as part of it.
 
-Code Example:
 We'll use the pre_save signal, which is triggered before saving an instance, and check whether it runs inside the same database transaction by rolling back the transaction after triggering the signal.
 
+Code Snippet:
 ```python
 from django.db import models, transaction
 from django.db.models.signals import pre_save
@@ -186,7 +186,7 @@ Define the Rectangle class with the __init__ method to initialize length and wid
 Implement the __iter__ method to allow iteration over the Rectangle object, which returns the values in the desired format.
 Here's how to implement it:
 
-Code Example:
+Code Snippet:
 ```python
 Copy code
 class Rectangle:
