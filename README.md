@@ -1,17 +1,13 @@
 Question 1: By default are django signals executed synchronously or asynchronously? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.
-ChatGPT said:
-ChatGPT
-By default, Django signals are executed synchronously. This means that when a signal is sent, the connected receiver functions are executed immediately within the same thread, blocking the main execution until they are done.
 
-Here's a code snippet to demonstrate this:
+By default, Django signals are executed synchronously. This means that when a signal is sent, the connected receiver functions are executed immediately within the same thread, blocking the main execution until they are donee
 
 Explanation:
 We'll use Django's built-in pre_save signal, which is triggered just before an instance is saved.
 We'll connect a signal receiver function that introduces an artificial delay using Python's time.sleep() to simulate a long-running task.
 By observing how long the main code takes to execute, we can verify that the signal is running synchronously.
+
 Code Example:
-python
-Copy code
 import time
 from django.db import models
 from django.db.models.signals import pre_save
@@ -38,12 +34,6 @@ if __name__ == "__main__":
 
     end_time = time.time()
     print(f"Total time taken: {end_time - start_time} seconds")
-Expected Output:
-arduino
-Copy code
-Signal received. Simulating long task...
-Signal task completed.
-Total time taken: 5.02 seconds
 Conclusion:
 As seen in the example, the total time taken includes the 5-second delay introduced by the signal handler. This demonstrates that Django signals are executed synchronously by default because the main execution waits for the signal handler to finish before continuing.
 
