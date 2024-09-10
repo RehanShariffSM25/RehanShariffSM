@@ -47,7 +47,9 @@ Total time taken: 5.02 seconds
 ```
 Conclusion:
 As seen in the example, the total time taken includes the 5-second delay introduced by the signal handler. This demonstrates that Django signals are executed synchronously by default because the main execution waits for the signal handler to finish before continuing.
-<br>
+
+
+
 
 
 **Question 2:
@@ -86,7 +88,9 @@ Signal received in thread: 140370487887360
 ```
 Conclusion:
 In this example, the thread ID printed in the main execution and the thread ID printed inside the signal handler are the same. This proves that Django signals, by default, run in the same thread as the caller.
-<br>
+
+
+
 
 
 
@@ -154,7 +158,9 @@ Instance was NOT saved due to rollback.
 ```
 Conclusion:
 The signal handler runs inside the transaction as long as it is executed within a transaction.atomic() block, as shown by the message "Signal is inside the transaction." If the transaction is rolled back, the signal and the changes it triggers are also rolled back. This proves that Django signals can run inside the same transaction as the caller if the transaction is managed explicitly using transaction.atomic(). However, by default, they are not automatically wrapped in a transaction unless specifically handled.
-<br>
+
+
+
 
 
 **Topic: Custom Classes in Python**<br>
