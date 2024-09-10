@@ -5,11 +5,11 @@ An instance of the Rectangle class requires length:int and width:int to be initi
 We can iterate over an instance of the Rectangle class.
 When an instance of the Rectangle class is iterated over, we first get its length in the format: {'length': <VALUE_OF_LENGTH>} followed by the width {width: <VALUE_OF_WIDTH>}.
 
-Steps:
-Run  rectangle.py  to observe the behavior.
+Steps:<br>
+Run  **rectangle.py**  to observe the behavior.
 
 ## Expected Output:
-{'length': 10}
-{'width': 5}
+{'length': 10}<br>
+{'width': 5}<br>
 
 The output shows that when iterating over the instance of the Rectangle class, the length is displayed first, followed by the width.

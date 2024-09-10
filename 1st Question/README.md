@@ -5,7 +5,7 @@ By default, are Django signals executed synchronously or asynchronously?
 This project demonstrates that Django signals are executed synchronously by default.
 
 Steps:<br>
-Run  test_signals_synchronous.py  to observe the behavior.
+Run  **test_signals_synchronous.py**  to observe the behavior.
 
 ## Expected Output:
 Signal received. Simulating long task...<br>
