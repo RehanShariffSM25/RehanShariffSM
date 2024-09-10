@@ -1,16 +1,16 @@
-# Django Signal Synchronous Execution Test
-
+## Topic: Django Signals
+## Question 1: 
+By default, are Django signals executed synchronously or asynchronously?
 This project demonstrates that Django signals are executed synchronously by default.
 
 Steps:
+Run  test_signals_synchronous.py  to observe the behavior.
 
-1. Ensure Django is installed and configured.
-2. Set up the project and app as described.
-3. Run `python test_signals.py` to observe the behavior.
-
-## Expected Output
-Signal received. Simulating long task... Signal task completed. Total time taken: 5.02 seconds
-
+## Expected Output:
+Signal received. Simulating long task...
+Signal task completed.
+Total time taken: 5.02 seconds
 
 The output shows that the main script execution waits for the signal handler to complete, confirming synchronous execution.
+
 
