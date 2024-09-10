@@ -186,7 +186,6 @@ Here's how to implement it:
 
 Code Snippet:
 ```python
-Copy code
 class Rectangle:
     def __init__(self, length: int, width: int):
         self.length = length
