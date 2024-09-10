@@ -1,4 +1,4 @@
-**Question 1: 
+##**Question 1: 
 By default are django signals executed synchronously or asynchronously? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.**
 
 By default, Django signals are executed synchronously. This means that when a signal is sent, the connected receiver functions are executed immediately within the same thread, blocking the main execution until they are done.
@@ -52,7 +52,7 @@ As seen in the example, the total time taken includes the 5-second delay introdu
 
 
 
-**Question 2:
+##**Question 2:
 Do django signals run in the same thread as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.**
 
 Yes, by default, Django signals run in the same thread as the caller. To prove this, we can examine the thread IDs of both the main caller and the signal handler when a signal is triggered. If the thread IDs are the same, this conclusively shows that the signal handler is running in the same thread as the main execution.
@@ -95,7 +95,7 @@ In this example, the thread ID printed in the main execution and the thread ID p
 
 
 
-**Question 3: 
+##**Question 3: 
 By default do django signals run in the same database transaction as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.**
 
 By default, Django signals do not automatically run in the same database transaction as the caller unless explicitly wrapped in a transaction. This means that Django signals can run outside of the transactional context unless they are explicitly managed with transaction handling mechanisms.
@@ -163,6 +163,7 @@ The signal handler runs inside the transaction as long as it is executed within 
 
 
 
+##**Question 4**
 **Topic: Custom Classes in Python**<br>
 **Description: You are tasked with creating a Rectangle class with the following requirements:
 An instance of the Rectangle class requires length:int and width:int to be initialized.
